@@ -47,7 +47,7 @@
     "rules": [
       {
         "rule_set": "geosite-dnsblock",
-        "action": "block"
+        "server": "block"
       },
       {
         "clash_mode": "direct",
