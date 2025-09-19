@@ -21,6 +21,12 @@
   "dns": {
     "servers": [
       {
+        "type": "hosts",
+        "path": [],
+        "predefined": {},
+        "tag": "block"
+      },
+      {
         "tag": "google",
         "type": "tls",
         "server": "8.8.8.8",
@@ -41,7 +47,7 @@
     "rules": [
       {
         "rule_set": "geosite-dnsblock",
-        "action": "reject"
+        "server": "block"
       },
       {
         "clash_mode": "direct",
@@ -136,7 +142,43 @@
       "outbounds": [
         "auto",
         "direct",
-        "{all}"
+        "🇨🇦 ☀CA-加拿大",
+        "🇩🇪 ☀DE-专线-德国",
+        "🇪🇸 ☀ES-专线-西班牙",
+        "🇫🇷 ☀FR-专线-法国",
+        "🇭🇰 ☀HK-专线-香港1(3倍流量)",
+        "🇭🇰 ☀HK-专线-香港2(1.5倍流量)",
+        "🇭🇰 ☀HK-香港HKT",
+        "🇭🇰 ☀HK-香港IPV6",
+        "🇭🇰 ☀HK-香港MBGP(3倍流量)",
+        "🇭🇰 ☀HK-香港SBGP",
+        "🇯🇵 ☀JP-专线-日本(2倍流量)",
+        "🇯🇵 ☀JP-专线-日本DV",
+        "🇯🇵 ☀JP-日本DV",
+        "🇯🇵 ☀JP-日本IPV6",
+        "🇯🇵 ☀JP-日本NRT",
+        "🇰🇷 ☀KR-韩国",
+        "🇰🇷 ☀KR-韩国KT",
+        "🇲🇾 ☀MY-专线-马来西亚(5倍流量)",
+        "🇷🇺 ☀RU-俄罗斯中转",
+        "🇷🇺 ☀RU-俄罗斯莫斯科CN2",
+        "🇸🇬 ☀SG-专线-新加坡",
+        "🇸🇬 ☀SG-专线-新加坡2",
+        "🇸🇬 ☀SG-新加坡中转",
+        "🇹🇭 ☀THA-泰国曼谷中转",
+        "🇹🇼 ☀TW-专线-台湾(2倍流量)",
+        "🇹🇼 ☀TW-台湾HINET商宽[Netflix]",
+        "🇹🇼 ☀TW-台湾HINET家宽[Netflix]",
+        "🇹🇼 ☀TW-台湾彰化IPV6[Netflix]",
+        "🇹🇼 ☀TW-台湾电信优化[Netflix]",
+        "🇹🇼 ☀TW-台湾移动联通优化[Netflix]",
+        "🇬🇧 ☀UK-专线-英国",
+        "🇺🇸 ☀US-专线-美西(2倍流量)",
+        "🇺🇸 ☀US-美国凤凰城原生",
+        "🇺🇸 ☀US-美国加州湾区电信专用(8倍流量)",
+        "🇭🇰 ☀US-美国洛杉矶CMIN2",
+        "🇻🇳 ☀VN-越南",
+        "🇻🇳 ☀VN-越南三网优化"
       ]
     },
     {
@@ -353,105 +395,109 @@
       "tag": "HongKong",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇭🇰|HK|hk|香港|港|HongKong"
-          ]
-        }
+        "🇭🇰 ☀HK-专线-香港1(3倍流量)",
+        "🇭🇰 ☀HK-专线-香港2(1.5倍流量)",
+        "🇭🇰 ☀HK-香港HKT",
+        "🇭🇰 ☀HK-香港IPV6",
+        "🇭🇰 ☀HK-香港MBGP(3倍流量)",
+        "🇭🇰 ☀HK-香港SBGP",
+        "🇭🇰 ☀US-美国洛杉矶CMIN2"
       ]
     },
     {
       "tag": "TaiWan",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"
-          ]
-        }
+        "🇹🇼 ☀TW-专线-台湾(2倍流量)",
+        "🇹🇼 ☀TW-台湾HINET商宽[Netflix]",
+        "🇹🇼 ☀TW-台湾HINET家宽[Netflix]",
+        "🇹🇼 ☀TW-台湾彰化IPV6[Netflix]",
+        "🇹🇼 ☀TW-台湾电信优化[Netflix]",
+        "🇹🇼 ☀TW-台湾移动联通优化[Netflix]"
       ]
     },
     {
       "tag": "Singapore",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇸🇬|SG|sg|新加坡|狮|Singapore"
-          ]
-        }
+        "🇸🇬 ☀SG-专线-新加坡",
+        "🇸🇬 ☀SG-专线-新加坡2",
+        "🇸🇬 ☀SG-新加坡中转"
       ]
     },
     {
       "tag": "Japan",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇯🇵|JP|jp|日本|日|Japan"
-          ]
-        }
+        "🇯🇵 ☀JP-专线-日本(2倍流量)",
+        "🇯🇵 ☀JP-专线-日本DV",
+        "🇯🇵 ☀JP-日本DV",
+        "🇯🇵 ☀JP-日本IPV6",
+        "🇯🇵 ☀JP-日本NRT"
       ]
     },
     {
       "tag": "America",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇺🇸|US|us|美国|美|United States"
-          ]
-        }
+        "🇺🇸 ☀US-专线-美西(2倍流量)",
+        "🇺🇸 ☀US-美国凤凰城原生",
+        "🇺🇸 ☀US-美国加州湾区电信专用(8倍流量)",
+        "🇭🇰 ☀US-美国洛杉矶CMIN2"
       ]
     },
     {
       "tag": "Others",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"
-          ]
-        }
+        "🇨🇦 ☀CA-加拿大",
+        "🇩🇪 ☀DE-专线-德国",
+        "🇪🇸 ☀ES-专线-西班牙",
+        "🇫🇷 ☀FR-专线-法国",
+        "🇰🇷 ☀KR-韩国",
+        "🇰🇷 ☀KR-韩国KT",
+        "🇲🇾 ☀MY-专线-马来西亚(5倍流量)",
+        "🇷🇺 ☀RU-俄罗斯中转",
+        "🇷🇺 ☀RU-俄罗斯莫斯科CN2",
+        "🇹🇭 ☀THA-泰国曼谷中转",
+        "🇬🇧 ☀UK-专线-英国",
+        "🇻🇳 ☀VN-越南",
+        "🇻🇳 ☀VN-越南三网优化"
       ]
     },
     {
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "网站|地址|剩余|过期|时间|有效|官网|产品|流量"
-          ]
-        }
+        "🇨🇦 ☀CA-加拿大",
+        "🇩🇪 ☀DE-专线-德国",
+        "🇪🇸 ☀ES-专线-西班牙",
+        "🇫🇷 ☀FR-专线-法国",
+        "🇭🇰 ☀HK-香港HKT",
+        "🇭🇰 ☀HK-香港IPV6",
+        "🇭🇰 ☀HK-香港SBGP",
+        "🇯🇵 ☀JP-专线-日本DV",
+        "🇯🇵 ☀JP-日本DV",
+        "🇯🇵 ☀JP-日本IPV6",
+        "🇯🇵 ☀JP-日本NRT",
+        "🇰🇷 ☀KR-韩国",
+        "🇰🇷 ☀KR-韩国KT",
+        "🇷🇺 ☀RU-俄罗斯中转",
+        "🇷🇺 ☀RU-俄罗斯莫斯科CN2",
+        "🇸🇬 ☀SG-专线-新加坡",
+        "🇸🇬 ☀SG-专线-新加坡2",
+        "🇸🇬 ☀SG-新加坡中转",
+        "🇹🇭 ☀THA-泰国曼谷中转",
+        "🇹🇼 ☀TW-台湾HINET商宽[Netflix]",
+        "🇹🇼 ☀TW-台湾HINET家宽[Netflix]",
+        "🇹🇼 ☀TW-台湾彰化IPV6[Netflix]",
+        "🇹🇼 ☀TW-台湾电信优化[Netflix]",
+        "🇹🇼 ☀TW-台湾移动联通优化[Netflix]",
+        "🇬🇧 ☀UK-专线-英国",
+        "🇺🇸 ☀US-美国凤凰城原生",
+        "🇭🇰 ☀US-美国洛杉矶CMIN2",
+        "🇻🇳 ☀VN-越南",
+        "🇻🇳 ☀VN-越南三网优化"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -460,6 +506,730 @@
     {
       "type": "direct",
       "tag": "direct"
+    },
+    {
+      "tag": "🇨🇦 ☀CA-加拿大",
+      "type": "vless",
+      "server": "twzz2.aaaa.gay",
+      "server_port": 50460,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇩🇪 ☀DE-专线-德国",
+      "type": "vless",
+      "server": "gg.doubledou.icu",
+      "server_port": 50017,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇪🇸 ☀ES-专线-西班牙",
+      "type": "vless",
+      "server": "gg.doubledou.icu",
+      "server_port": 50020,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇫🇷 ☀FR-专线-法国",
+      "type": "vless",
+      "server": "gg.doubledou.icu",
+      "server_port": 50018,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰 ☀HK-专线-香港1(3倍流量)",
+      "type": "trojan",
+      "server": "gg.doubledou.icu",
+      "server_port": 12345,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "bestbgp.doubledou.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 ☀HK-专线-香港2(1.5倍流量)",
+      "type": "vless",
+      "server": "gg.doubledou.icu",
+      "server_port": 50002,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰 ☀HK-香港HKT",
+      "type": "vless",
+      "server": "kbgp.doubledou.icu",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰 ☀HK-香港IPV6",
+      "type": "trojan",
+      "server": "hkv6.doubledou.icu",
+      "server_port": 50015,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "wtt.doubledou.win"
+      }
+    },
+    {
+      "tag": "🇭🇰 ☀HK-香港MBGP(3倍流量)",
+      "type": "vless",
+      "server": "mbgp.doubledou.icu",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰 ☀HK-香港SBGP",
+      "type": "vless",
+      "server": "pqsbgp.doubledou.icu",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵 ☀JP-专线-日本(2倍流量)",
+      "type": "trojan",
+      "server": "gg.doubledou.icu",
+      "server_port": 50001,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "jpcn2.doubledou.icu"
+      }
+    },
+    {
+      "tag": "🇯🇵 ☀JP-专线-日本DV",
+      "type": "vless",
+      "server": "gg.doubledou.icu",
+      "server_port": 50023,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵 ☀JP-日本DV",
+      "type": "vless",
+      "server": "twzz2.aaaa.gay",
+      "server_port": 50462,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵 ☀JP-日本IPV6",
+      "type": "trojan",
+      "server": "v6tw.doubledou.icu",
+      "server_port": 50010,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "jpcn2.doubledou.icu"
+      }
+    },
+    {
+      "tag": "🇯🇵 ☀JP-日本NRT",
+      "type": "vless",
+      "server": "idcf.doubledou.icu",
+      "server_port": 50081,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇰🇷 ☀KR-韩国",
+      "type": "vless",
+      "server": "zzjp2.aaaa.gay",
+      "server_port": 50001,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇰🇷 ☀KR-韩国KT",
+      "type": "vless",
+      "server": "skb.doubledou.icu",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇲🇾 ☀MY-专线-马来西亚(5倍流量)",
+      "type": "trojan",
+      "server": "gg.doubledou.icu",
+      "server_port": 50015,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "my.doubledou.icu"
+      }
+    },
+    {
+      "tag": "🇷🇺 ☀RU-俄罗斯中转",
+      "type": "vless",
+      "server": "twzz2.aaaa.gay",
+      "server_port": 50461,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇷🇺 ☀RU-俄罗斯莫斯科CN2",
+      "type": "vless",
+      "server": "46.17.42.244",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬 ☀SG-专线-新加坡",
+      "type": "trojan",
+      "server": "gg.doubledou.icu",
+      "server_port": 40000,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sgpcontabo.doubledou.icu"
+      }
+    },
+    {
+      "tag": "🇸🇬 ☀SG-专线-新加坡2",
+      "type": "vless",
+      "server": "gg.doubledou.icu",
+      "server_port": 50021,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬 ☀SG-新加坡中转",
+      "type": "vless",
+      "server": "twzz2.aaaa.gay",
+      "server_port": 50463,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇹🇭 ☀THA-泰国曼谷中转",
+      "type": "vless",
+      "server": "twzz2.aaaa.gay",
+      "server_port": 50079,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇹🇼 ☀TW-专线-台湾(2倍流量)",
+      "type": "trojan",
+      "server": "gg.doubledou.icu",
+      "server_port": 50000,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "gg.doubledou.icu"
+      }
+    },
+    {
+      "tag": "🇹🇼 ☀TW-台湾HINET商宽[Netflix]",
+      "type": "vless",
+      "server": "vltw1.doubledou.icu",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇹🇼 ☀TW-台湾HINET家宽[Netflix]",
+      "type": "vless",
+      "server": "twb.doubledou.icu",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇹🇼 ☀TW-台湾彰化IPV6[Netflix]",
+      "type": "trojan",
+      "server": "v6tw.doubledou.icu",
+      "server_port": 4245,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "twb.doubledou.icu"
+      }
+    },
+    {
+      "tag": "🇹🇼 ☀TW-台湾电信优化[Netflix]",
+      "type": "vless",
+      "server": "twzz2.aaaa.gay",
+      "server_port": 50099,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇹🇼 ☀TW-台湾移动联通优化[Netflix]",
+      "type": "vless",
+      "server": "103.137.62.229",
+      "server_port": 14443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇬🇧 ☀UK-专线-英国",
+      "type": "vless",
+      "server": "gg.doubledou.icu",
+      "server_port": 50019,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸 ☀US-专线-美西(2倍流量)",
+      "type": "trojan",
+      "server": "gg.doubledou.icu",
+      "server_port": 50016,
+      "password": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sjc.doubledou.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 ☀US-美国凤凰城原生",
+      "type": "vless",
+      "server": "idcf2.doubledou.icu",
+      "server_port": 50003,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸 ☀US-美国加州湾区电信专用(8倍流量)",
+      "type": "vless",
+      "server": "cn2.doubledou.icu",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "www.amd.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰 ☀US-美国洛杉矶CMIN2",
+      "type": "vless",
+      "server": "cmin2.doubledou.icu",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇻🇳 ☀VN-越南",
+      "type": "vless",
+      "server": "160.25.74.25",
+      "server_port": 443,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "🇻🇳 ☀VN-越南三网优化",
+      "type": "vless",
+      "server": "twzz2.aaaa.gay",
+      "server_port": 50096,
+      "uuid": "1d73ff59-3d70-3810-be22-b49999b9cb14",
+      "packet_encoding": "xudp",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "tesla.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "zRZhlkKjUeqtIk9j6yy95aX-2krqQVyWORLv5tQkQGM"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
     }
   ],
   "route": {
