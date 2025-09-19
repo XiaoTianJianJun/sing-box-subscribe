@@ -21,12 +21,6 @@
   "dns": {
     "servers": [
       {
-        "type": "hosts",
-        "path": [],
-        "predefined": {},
-        "tag": "block"
-      },
-      {
         "tag": "google",
         "type": "tls",
         "server": "8.8.8.8",
@@ -47,7 +41,7 @@
     "rules": [
       {
         "rule_set": "geosite-dnsblock",
-        "server": "block"
+        "action": "reject"
       },
       {
         "clash_mode": "direct",
@@ -634,7 +628,7 @@
         "type": "remote",
         "tag": "geosite-dnsblock",
         "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.srs",
+        "url": "https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json",
         "download_detour": "direct"
       },
       {
