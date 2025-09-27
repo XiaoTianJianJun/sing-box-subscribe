@@ -627,7 +627,7 @@
         "type": "remote",
         "tag": "geosite-dnsblock",
         "format": "source",
-        "url": "https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json",
+        "url": "https://anti-ad.net/anti-ad-sing-box.srs",
         "download_detour": "direct"
       },
       {
